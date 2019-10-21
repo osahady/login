@@ -13,6 +13,19 @@
 
 Route::get('/', function () {
     return view('welcome');
+    
+    // if(Auth::check()){
+    //     return "the user is logged in";
+    // }
+
+    // $username = 'osahady@gmail.com';
+    // $password = 'doyouknow';
+    // if (Auth::atempt(['username'=>$username, 'password'=>$password])) {
+    //     return redirect()->intended('/admin');
+    // }
+
+    // Auth::logout();
+    
 });
 
 Auth::routes();
