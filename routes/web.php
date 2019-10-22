@@ -12,6 +12,9 @@
 */
 
 Route::get('/', function () {
+
+ 
+
     return view('welcome');
     
     // if(Auth::check()){
@@ -31,3 +34,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/admin/user/roles', ['middleware' =>['role', 'auth', 'web'],  function(){
+    return "Middleware role";
+}]);
+
+// Route::get('/admin/user/roles',   function(){
+//     return "Middleware role";
+// })->middleware('role', 'auth');
+
+Route::get('/admin', 'AdminController@index');
